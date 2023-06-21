@@ -18,6 +18,25 @@ export class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const contactsFromLocalStorage = localStorage.getItem('contacts');
+
+    if (contactsFromLocalStorage) {
+      this.setState({ contacts: JSON.parse(contactsFromLocalStorage) });
+    } else {
+      this.saveContactsToLocalStorage();
+    }
+  }
+
+  componentDidUpdate() {
+    this.saveContactsToLocalStorage();
+  }
+
+  saveContactsToLocalStorage() {
+    const { contacts } = this.state;
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }
+
   handleFormSubmit = (name, number) => {
     const { contacts } = this.state;
 
