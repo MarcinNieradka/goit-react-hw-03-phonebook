@@ -1,0 +1,28 @@
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.contacts-list__item {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.contacts-list__item-button {
+  margin-left: auto;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #f44336;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
